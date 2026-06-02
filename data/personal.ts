@@ -243,14 +243,13 @@ export const SOFTWARES = [
 // ──────────────────────────────────────────────
 // 5. 联系方式 / CONTACT
 // ──────────────────────────────────────────────
-// Contact 区的 4 张悬浮卡（电话/邮箱/微信/小红书）
-// 4 floating cards in Contact section
+// Contact 区的悬浮卡（邮箱/微信/小红书）
+// Floating cards in Contact section (email / wechat / red note)
 //
-// 直接改 value 就行；微信卡多了一个 qrCode 字段（二维码图片 URL）
-// Just edit `value`. WeChat card has an extra `qrCode` (QR image URL).
+// 想再加一种联系方式：先在这里加字段，再去 sections/Contact.tsx 复制一张卡进去
+// To add a new channel: add field here, then duplicate a card block in Contact.tsx
 // ──────────────────────────────────────────────
 export const CONTACT = {
-    // phone: '+86 000 0000 0000',
     email: 'hello@example.com',
     wechatId: 'YourID',
     wechatQrUrl: 'https://picsum.photos/seed/wechat/400/400',  // 微信二维码图片 URL

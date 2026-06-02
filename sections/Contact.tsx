@@ -40,16 +40,6 @@ const ICONS = {
 // Positions / rotations / colors remain configurable below
 const CONTACT_CARDS = [
     {
-        id: 'phone',
-        title: 'PHONE',
-        value: CONTACT.phone,
-        color: '#3B82F6', // Blue
-        icon: ICONS.Phone,
-        position: { x: '-150%', y: '13%' },
-        rotation: 12,
-        hoverRotation: 15
-    },
-    {
         id: 'email',
         title: 'EMAIL',
         value: CONTACT.email,
