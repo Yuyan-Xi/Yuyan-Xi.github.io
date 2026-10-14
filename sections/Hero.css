@@ -1,0 +1,9 @@
+@media (max-width: 1023px) {
+  .site-nav { padding: 20px 12px; }
+  .site-nav > div:last-child { gap: 4px; }
+  .site-nav > div:last-child > div:last-child { gap: 0; }
+  .site-nav > div:last-child > div:last-child > * { margin-left: 0; }
+  .site-nav a { padding: 8px; font-size: 8px; letter-spacing: .05em; white-space: nowrap; }
+  .site-nav > div:last-child > div:first-child > div > div { gap: 6px; }
+}
+@media (max-width: 359px) { .site-nav a { padding: 7px 5px; font-size: 7px; } }

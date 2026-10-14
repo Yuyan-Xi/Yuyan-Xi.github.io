@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center transition-all duration-500 pointer-events-none"
+      className="site-nav fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center transition-all duration-500 pointer-events-none"
       initial={{ opacity: 1 }}
       animate={{ 
         backgroundColor: isScrolled ? "rgba(255,255,255,0.01)" : "transparent",

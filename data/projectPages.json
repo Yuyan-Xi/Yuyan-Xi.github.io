@@ -1,0 +1,155 @@
+{
+  "between-bodies": [
+    {
+      "src": "/projects/between-bodies/page-01.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/between-bodies/page-02.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/between-bodies/page-03.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/between-bodies/page-04.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/between-bodies/page-05.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/between-bodies/page-06.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/between-bodies/page-07.jpg",
+      "width": 2400,
+      "height": 1200
+    }
+  ],
+  "bleach-alert": [
+    {
+      "src": "/projects/bleach-alert/page-01.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/bleach-alert/page-02.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/bleach-alert/page-03.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/bleach-alert/page-04.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/bleach-alert/page-05.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/bleach-alert/page-06.jpg",
+      "width": 2400,
+      "height": 1200
+    }
+  ],
+  "coolcore-workwear": [
+    {
+      "src": "/projects/coolcore-workwear/page-01.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coolcore-workwear/page-02.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coolcore-workwear/page-03.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coolcore-workwear/page-04.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coolcore-workwear/page-05.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coolcore-workwear/page-06.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coolcore-workwear/page-07.jpg",
+      "width": 2400,
+      "height": 1200
+    }
+  ],
+  "coral-care": [
+    {
+      "src": "/projects/coral-care/page-01.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coral-care/page-02.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coral-care/page-03.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coral-care/page-04.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coral-care/page-05.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coral-care/page-06.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coral-care/page-07.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coral-care/page-08.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/coral-care/page-09.jpg",
+      "width": 2400,
+      "height": 1200
+    }
+  ]
+}

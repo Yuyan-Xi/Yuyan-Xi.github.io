@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
-import Profile from './sections/Profile';
 import VinylProjects from './sections/VinylProjects';
 import Contact from './sections/Contact';
 import LoadingScreen from './components/LoadingScreen';
@@ -87,10 +86,6 @@ const App: React.FC = () => {
             
             <div id="hero" className="relative z-10">
               <Hero />
-            </div>
-            
-            <div id="experience" className="relative z-20">
-                <Profile />
             </div>
             
             {/* Projects follows immediately, higher z-index to interact properly */}

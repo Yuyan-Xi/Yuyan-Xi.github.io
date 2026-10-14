@@ -1,3 +1,5 @@
+import { ABOUT } from './aboutMe';
+
 // ============================================================
 // 🟢 个人信息中心 / Personal Info Central Config
 // ============================================================
@@ -41,17 +43,17 @@ export const BASIC = {
     // Hero 区 photo 上方的多行职业描述（每行一段）
     // Hero photo's caption lines below big title
     professionLines: [
-        'Visual Designer',
-        'Illustrator & Animator',
+        'Digital Media Art',
+        'Interaction & Product Design',
     ],
 
     // Hero 区大头照（hover 时从大字里露出来的图）
     // Hero photo URL (revealed on hover from giant title)
-    heroPhotoUrl: 'https://picsum.photos/seed/reveal/400/600',
+    heroPhotoUrl: ABOUT.portrait,
 
     // Profile 区域大照片 URL
     // Profile section main photo URL
-    profilePhotoUrl: 'https://picsum.photos/seed/profile/800/1100',
+    profilePhotoUrl: ABOUT.portrait,
 };
 
 
@@ -69,44 +71,15 @@ export const BASIC = {
 //   desc    详细描述（modal 里展开），支持 \n 换行
 //   tags    3 个标签，全大写最美
 // ──────────────────────────────────────────────
-export const EXPERIENCE = [
-    {
-        id: '1',
-        year: '2024 - 2025',
-        role: 'Senior Visual Designer',
-        company: 'Global Design Agency',
-        color: '#FF7F27',
-        desc: '1. Led visual strategy for major marketing campaigns, resulting in a significant increase in user engagement and conversion rates.\n2. Developed comprehensive brand identity systems for international markets, ensuring visual consistency across various digital and physical touchpoints.\n3. Managed cross-functional design projects, including UI/UX, motion graphics, and high-end presentation design.',
-        tags: ['VISUAL DESIGN', 'BRANDING', 'LEADERSHIP'],
-    },
-    {
-        id: '2',
-        year: '2021 - 2024',
-        role: 'Master of Visual Communication',
-        company: 'Prestigious Art University',
-        color: '#005C4B',
-        desc: 'Awarded academic scholarships and actively participated in international design competitions, focusing on advanced design theory and experimental visual language.',
-        tags: ['MASTER DEGREE', 'THEORY', 'AWARDS'],
-    },
-    {
-        id: '3',
-        year: '2021 - 2022',
-        role: 'Illustrator & Art Director',
-        company: 'Creative Studio Ltd',
-        color: '#FFCC00',
-        desc: 'Created diverse illustrations for brand identities, posters, and key visuals, blending traditional techniques with modern digital aesthetics.',
-        tags: ['ILLUSTRATION', 'ART DIRECTION', 'CREATIVE'],
-    },
-    {
-        id: '4',
-        year: '2017 - 2021',
-        role: 'Junior Visual Designer',
-        company: 'Innovative Tech Firm',
-        color: '#55FF55',
-        desc: '1. Built standardized component libraries and visual design systems, improving design efficiency by 30% across multiple product lines.\n2. Developed modular animation assets, reducing production cycles and ensuring a cohesive motion language throughout the application.',
-        tags: ['SYSTEM DESIGN', 'EFFICIENCY', 'ANIMATION'],
-    },
-];
+export const EXPERIENCE = ABOUT.internships.map((item, index) => ({
+    id: String(index + 1),
+    year: item.dates,
+    role: item.role,
+    company: item.company,
+    color: index === 0 ? '#A43532' : '#1989A8',
+    desc: item.details.join('\n'),
+    tags: [],
+}));
 
 
 // ──────────────────────────────────────────────
@@ -250,7 +223,7 @@ export const SOFTWARES = [
 // To add a new channel: add field here, then duplicate a card block in Contact.tsx
 // ──────────────────────────────────────────────
 export const CONTACT = {
-    email: 'hello@example.com',
+    email: ABOUT.email,
     wechatId: 'YourID',
     wechatQrUrl: 'https://picsum.photos/seed/wechat/400/400',  // 微信二维码图片 URL
     xiaohongshuId: '0000000000',

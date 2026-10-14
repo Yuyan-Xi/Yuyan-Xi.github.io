@@ -1,0 +1,16 @@
+.contact-section .contact-cards { display: flex; align-items: center; justify-content: center; gap: 40px; }
+.contact-section .contact-card-slot { flex-shrink: 0; }
+@media (max-width: 1100px) {
+  .contact-section .contact-scene { transform: scale(.65) rotateX(25deg) !important; }
+  .contact-section .contact-cards { gap: 28px; }
+}
+@media (max-width: 767px) {
+  .contact-section { height: auto !important; min-height: 100svh; padding: 70px 24px; }
+  .contact-section .contact-stage { height: auto; perspective: none; }
+  .contact-section .contact-scene { height: auto; transform: none !important; }
+  .contact-section .contact-scene > div:first-child { display: none; }
+  .contact-section .contact-cards { position: relative; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+  .contact-section .contact-card-slot { width: min(300px, 100%); }
+  .contact-section .contact-card { width: 100% !important; height: 380px !important; transform: none !important; }
+  .contact-section .contact-card-details { opacity: 1 !important; transform: none !important; }
+}

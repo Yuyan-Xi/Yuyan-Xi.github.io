@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate, AnimatePresence } from 'framer-motion';
 import { CONTACT } from '../data/personal';
+import './Contact.css';
 
 // --- CONFIGURATION ---
 // 微信二维码 URL 已迁移到 data/personal.ts (CONTACT.wechatQrUrl)
@@ -113,12 +114,8 @@ const Card3D: React.FC<{ item: typeof CONTACT_CARDS[number]; index: number }> = 
 
     return (
         <motion.div
-            className="absolute perspective-1000"
+            className="contact-card-slot relative perspective-1000"
             style={{
-                left: '50%',
-                top: '25%', // 🟢 Changed from 35% to 25% (Moved UP)
-                x: item.position.x, 
-                y: item.position.y,
                 zIndex: isHovered ? 100 : 10,
             }}
             initial={{ opacity: 0, scale: 0 }}
@@ -129,7 +126,7 @@ const Card3D: React.FC<{ item: typeof CONTACT_CARDS[number]; index: number }> = 
             onClick={handleCopy}
         >
             <motion.div
-                className="relative cursor-pointer"
+                className="contact-card relative cursor-pointer"
                 animate={{
                     // Idle: 1.5x original size (200 * 1.5 = 300)
                     // Hover: Slightly larger than idle
@@ -180,7 +177,7 @@ const Card3D: React.FC<{ item: typeof CONTACT_CARDS[number]; index: number }> = 
 
                     {/* CONTENT (Revealed on Hover) */}
                     <motion.div
-                        className="absolute bottom-10 left-0 w-full px-6 flex flex-col items-center"
+                        className="contact-card-details absolute bottom-10 left-0 w-full px-6 flex flex-col items-center"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
                     >
@@ -237,16 +234,15 @@ const Contact: React.FC = () => {
     return (
         <section 
             ref={containerRef}
-            className="relative w-full bg-white overflow-hidden"
+            className="contact-section relative w-full bg-white overflow-hidden"
             style={{ height: '100vh' }}
         >
-            <div className="w-full h-full flex items-center justify-center perspective-2000">
+            <div className="contact-stage w-full h-full flex items-center justify-center perspective-2000">
                 {/* Floor Container */}
                 <motion.div
-                    className="relative w-full max-w-[1400px] h-full transform-gpu"
+                    className="contact-scene relative w-full max-w-[1400px] h-full transform-gpu"
                     style={{
                         rotateX: "40deg", // Permanent tilt for the floor
-                        y,
                         scale: 0.8, // 🟢 80% ZOOM EFFECT
                         transformStyle: "preserve-3d",
                     }}
@@ -261,7 +257,7 @@ const Contact: React.FC = () => {
                     />
 
                     {/* Cards Container */}
-                    <div className="absolute inset-0 pointer-events-auto" style={{ transformStyle: "preserve-3d" }}>
+                    <div className="contact-cards absolute inset-0 pointer-events-auto" style={{ transformStyle: "preserve-3d" }}>
                          {CONTACT_CARDS.map((card, idx) => (
                              <Card3D key={card.id} item={card} index={idx} />
                          ))}
