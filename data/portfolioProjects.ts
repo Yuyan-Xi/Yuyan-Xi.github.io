@@ -7,6 +7,7 @@ export type PortfolioProject = {
   color: string;
   desc: string;
   pdfUrl: string;
+  videoUrl?: string;
   pages: { src: string; width: number; height: number }[];
 };
 
@@ -18,6 +19,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     color: '#E94B2C',
     desc: 'A space installation offering a space for contemplative healing, focusing on contemporary societal perspectives regarding organ transplantation and the phenomenon of donation.',
     pdfUrl: '/projects/between-bodies/between-bodies.pdf',
+    videoUrl: '/projects/between-bodies/between-bodies.mp4',
     pages: projectPages['between-bodies']
   },
   {
@@ -48,3 +50,13 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     pages: projectPages['coral-care']
   }
 ];
+
+export const OTHER_WORKS: PortfolioProject = {
+  id: 5,
+  title: 'Other Works',
+  label: 'MORE EXPLORATIONS',
+  color: '#7963a8',
+  desc: 'A collection of additional works and creative explorations.',
+  pdfUrl: '/projects/other-works/other-works.pdf',
+  pages: projectPages['other-works'],
+};

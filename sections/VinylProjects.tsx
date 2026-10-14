@@ -1,10 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { PORTFOLIO_PROJECTS, PortfolioProject } from '../data/portfolioProjects';
+import { PORTFOLIO_PROJECTS, OTHER_WORKS, PortfolioProject } from '../data/portfolioProjects';
 import './Projects.css';
 
 const ProjectDetail: React.FC<{ project: PortfolioProject; onClose: () => void }> = ({ project, onClose }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showVideo, setShowVideo] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const pauseMusic = () => window.dispatchEvent(new Event('pause-background-music'));
+  const resumeMusic = () => window.dispatchEvent(new Event('resume-background-music'));
+
+  useEffect(() => {
+    if (showVideo) videoRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }, [showVideo]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -20,6 +29,7 @@ const ProjectDetail: React.FC<{ project: PortfolioProject; onClose: () => void }
     });
     dialog.showModal();
     return () => {
+      window.dispatchEvent(new Event('resume-background-music'));
       dialog.close();
       document.body.style.cssText = bodyStyle;
       const scrollBehavior = document.documentElement.style.scrollBehavior;
@@ -43,14 +53,25 @@ const ProjectDetail: React.FC<{ project: PortfolioProject; onClose: () => void }
           <p>{project.label}</p>
           <h2 id="project-detail-title">{project.title}</h2>
         </div>
-        <a className="project-pdf-link" href={project.pdfUrl} download>Download PDF ↓</a>
         <button className="project-close" type="button" onClick={onClose} autoFocus aria-label="Close project">✕</button>
       </header>
       <div className="project-reader" tabIndex={0} role="region" aria-label={`${project.title} pages`}>
         <div className="project-reader-intro">
           <p>{project.desc}</p>
           <span>{project.pages.length} pages · Scroll to explore ↓</span>
+          {project.videoUrl && <button className="project-video-button" type="button" onClick={() => {
+            setShowVideo(true);
+            setVideoError(false);
+            pauseMusic();
+            void videoRef.current?.play().catch(() => { setVideoError(true); resumeMusic(); });
+          }}>▶ Play video</button>}
         </div>
+        {project.videoUrl && <div className="project-video" hidden={!showVideo}>
+          <video ref={videoRef} src={project.videoUrl} controls playsInline preload="none"
+            aria-label={`${project.title} video`} onPlay={pauseMusic} onPause={resumeMusic} onEnded={resumeMusic}
+            onError={() => { setVideoError(true); resumeMusic(); }} />
+          {videoError && <p role="status">Please use the video controls to retry, or <a href={project.videoUrl} target="_blank" rel="noreferrer">open the video ↗</a>.</p>}
+        </div>}
         {project.pages.map((page, index) => (
           <figure className="project-page" key={page.src}>
             <img
@@ -105,6 +126,19 @@ const VinylProjects: React.FC = () => {
               </div>
             </button>
           ))}
+        </div>
+        <div className="other-works-section">
+          <button type="button" className="project-card other-works-card"
+            style={{ '--project-color': OTHER_WORKS.color } as React.CSSProperties}
+            onClick={() => setSelectedProject(OTHER_WORKS)} aria-label="View Other Works" aria-haspopup="dialog">
+            <div className="project-card-cover">
+              <img src={OTHER_WORKS.pages[0].src} width={OTHER_WORKS.pages[0].width} height={OTHER_WORKS.pages[0].height} alt="" loading="lazy" />
+            </div>
+            <div className="project-card-info">
+              <div><p>{OTHER_WORKS.label}</p><h3>Other Works</h3><span>Explore more works ↗</span></div>
+              <span className="project-card-arrow" aria-hidden="true">↗</span>
+            </div>
+          </button>
         </div>
       </div>
       {selectedProject && <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />}

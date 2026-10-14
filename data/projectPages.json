@@ -151,5 +151,17 @@
       "width": 2400,
       "height": 1200
     }
+  ],
+  "other-works": [
+    {
+      "src": "/projects/other-works/page-01.jpg",
+      "width": 2400,
+      "height": 1200
+    },
+    {
+      "src": "/projects/other-works/page-02.jpg",
+      "width": 2400,
+      "height": 1200
+    }
   ]
 }

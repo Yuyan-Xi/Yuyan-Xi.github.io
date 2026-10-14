@@ -22,7 +22,6 @@
 .project-dialog-heading { min-width: 0; flex: 1; }
 .project-dialog-heading p { font-size: 9px; letter-spacing: .1em; color: #777; margin: 0 0 4px; }
 .project-dialog-heading h2 { font-size: 23px; font-weight: 800; line-height: 1.2; letter-spacing: -.03em; margin: 0; }
-.project-pdf-link { flex-shrink: 0; font-size: 12px; color: #333; text-decoration: underline; text-underline-offset: 4px; }
 .project-close { flex-shrink: 0; width: 40px; height: 40px; display: grid; place-items: center; background: #f4f4f4; border: 1px solid #ddd; border-radius: 50%; cursor: pointer; color: #151515; font-size: 16px; }
 .project-reader { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; }
 .project-reader-intro { padding: 24px 32px; background: #fff; }
@@ -45,9 +44,22 @@
   .project-dialog-header { padding: max(14px, env(safe-area-inset-top)) 14px 14px; gap: 12px; }
   .project-dialog-heading h2 { font-size: 19px; }
   .project-dialog-heading p { font-size: 8px; }
-  .project-pdf-link { font-size: 10px; max-width: 68px; }
   .project-close { width: 34px; height: 34px; }
   .project-reader-intro { padding: 20px; }
   .project-reader-footer { padding-bottom: max(40px, env(safe-area-inset-bottom)); }
 }
 @media (prefers-reduced-motion: reduce) { .project-card, .project-card-arrow { transition: none; } }
+.other-works-section { margin-top: 32px; padding-top: 28px; border-top: 1px solid #e8e8e8; }
+.other-works-card { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+.other-works-card .project-card-info { padding: 24px; }
+.other-works-card .project-card-info div > span { display: block; margin-top: 14px; font-size: 11px; color: #777; }
+.project-video-button { display: block; margin-top: 18px; padding: 12px 22px; border: 0; border-radius: 24px; background: #151515; color: #fff; cursor: pointer; font-size: 12px; }
+.project-video { padding: 24px; background: #171717; color: #fff; }
+.project-video video { display: block; width: 100%; max-height: 65vh; margin: auto; }
+.project-video p { font-size: 12px; padding-top: 12px; }
+.project-video a { text-decoration: underline; }
+@media (max-width: 640px) {
+  .other-works-card { grid-template-columns: 1fr; }
+  .other-works-card .project-card-info { padding: 16px 14px 12px; }
+  .project-video { padding: 12px; }
+}
