@@ -1,6 +1,8 @@
-# xi1003-art
+# Zora-Xi
 
-我的个人主页，部署在 GitHub Pages：<https://xi1003-art.github.io/>
+我的个人主页，目前部署在 GitHub Pages：<https://xi1003-art.github.io/>。
+
+计划迁移到 `Zora-Xi.github.io`；账号及仓库迁移尚未完成。
 
 ## 技术栈
 
@@ -39,7 +41,7 @@ push 到 `main` 分支后，`.github/workflows/deploy.yml` 会自动构建并发
 ├── index.tsx               # ReactDOM mount
 ├── index.html              # HTML 模板（含 Tailwind CDN、字体）
 ├── components/             # 通用组件
-├── sections/               # 页面分区（Hero / Profile / Skills / VinylProjects / Contact）
+├── sections/               # 页面分区（Hero / Profile / VinylProjects / Contact）
 ├── data/                   # 静态数据
 └── .github/workflows/      # CI/CD
 ```

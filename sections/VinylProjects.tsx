@@ -12,9 +12,9 @@ import {
     WAVE_IMAGES_CONFIG,
     GROUP_1_CARDS_DATA,
     CUSTOM_NEW_IMAGES,
-    TOOL_ICONS,
-    PROJECTS_DATA
+    TOOL_ICONS
 } from '../data/vinylProjectData';
+import { PORTFOLIO_PROJECTS as PROJECTS_DATA } from '../data/portfolioProjects';
 
 // ==========================================
 // 🟢 CONFIGURATION: GLOBAL ZOOM & LAYOUT
@@ -1007,7 +1007,7 @@ const ProjectPreviewCard: React.FC<{
              <div 
                 className="absolute inset-0 rounded-[3rem] shadow-2xl overflow-hidden transform-gpu"
                 style={{
-                    backgroundColor: 'rgba(255,255,255,0.01)', // Very subtle tint
+                    backgroundColor: 'rgba(255,255,255,0.72)', // Glass tint keeps project details readable
                     borderColor: textColors.cardBorder,
                     borderWidth: '1px',
                     borderStyle: 'solid'
@@ -1770,7 +1770,7 @@ const VinylProjects: React.FC = () => {
 
                         {/* 🟢 NEW: PROJECT 1 SPECIAL HOVER IMAGES (Unique entrance from Right) */}
                         <AnimatePresence>
-                             {hoveredProject?.id === 1 && PROJECT_1_HOVER_CONFIG.map((img) => (
+                             {hoveredProject?.enableHoverDecorations && hoveredProject?.id === 1 && PROJECT_1_HOVER_CONFIG.map((img) => (
                                  <motion.img
                                     key={img.id}
                                     src={img.url}
@@ -1817,7 +1817,7 @@ const VinylProjects: React.FC = () => {
 
                         {/* 🟢 NEW: PROJECT 2-8 SPECIAL HOVER IMAGES (Explode from Center) */}
                         <AnimatePresence>
-                             {hoveredProject && hoveredProject.id !== 1 && HOVER_CONFIGS[hoveredProject.id] && HOVER_CONFIGS[hoveredProject.id].map((img) => {
+                             {hoveredProject?.enableHoverDecorations && hoveredProject.id !== 1 && HOVER_CONFIGS[hoveredProject.id] && HOVER_CONFIGS[hoveredProject.id].map((img) => {
                                  // Determine the correct filter ID based on the project ID
                                  // 🟢 CHECK 'noTint' PROPERTY HERE
                                  const tintFilter = (hoveredProject && PROJECT_TINTS[hoveredProject.id] && !img.noTint) 
@@ -2005,6 +2005,29 @@ const VinylProjects: React.FC = () => {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                {selectedProject.pdfUrl && (
+                                                    <div className="mt-10 border-t border-gray-100 pt-8">
+                                                        <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                                                            <div>
+                                                                <h3 className="text-lg font-bold">Full project PDF</h3>
+                                                                <p className="text-sm text-gray-500 mt-1">Open the complete portfolio presentation in a new tab.</p>
+                                                            </div>
+                                                            <a
+                                                                href={selectedProject.pdfUrl}
+                                                                target="_blank"
+                                                                rel="noreferrer"
+                                                                className="inline-flex items-center rounded-full bg-black px-5 py-2 text-xs font-bold tracking-widest text-white transition hover:bg-gray-700"
+                                                            >
+                                                                OPEN PDF
+                                                            </a>
+                                                        </div>
+                                                        <iframe
+                                                            src={`${selectedProject.pdfUrl}#view=FitH`}
+                                                            title={`${selectedProject.title} project PDF`}
+                                                            className="h-[55vh] min-h-[420px] w-full rounded-2xl border border-gray-200 bg-gray-50"
+                                                        />
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                         <div className="h-12" />

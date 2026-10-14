@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import Profile from './sections/Profile';
-import Skills from './sections/Skills';
 import VinylProjects from './sections/VinylProjects';
 import Contact from './sections/Contact';
 import LoadingScreen from './components/LoadingScreen';
@@ -94,12 +93,8 @@ const App: React.FC = () => {
                 <Profile />
             </div>
             
-            <div id="capabilities" className="relative z-30">
-                <Skills />
-            </div>
-            
             {/* Projects follows immediately, higher z-index to interact properly */}
-            <div id="projects" className="relative z-40">
+            <div id="projects" className="relative z-30">
                 <VinylProjects />
             </div>
             
