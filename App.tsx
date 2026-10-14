@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import VinylProjects from './sections/VinylProjects';
-import Contact from './sections/Contact';
 import LoadingScreen from './components/LoadingScreen';
 import ScrollToTop from './components/ScrollToTop';
 import MusicConsentModal from './components/MusicConsentModal';
@@ -93,10 +92,6 @@ const App: React.FC = () => {
                 <VinylProjects />
             </div>
             
-            {/* New Contact Section */}
-            <div id="contact" className="relative z-50">
-                <Contact />
-            </div>
           </main>
           
           <ScrollToTop />

@@ -119,18 +119,7 @@ const Navbar: React.FC = () => {
                 />
             ))}
 
-            <Magnetic>
-                <motion.a
-                    href="#contact"
-                    onClick={(e) => handleScroll(e, "#contact")}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    // 🟢 UPDATED: Font size text-[10px], Color text-gray-600
-                    className="ml-4 px-6 py-2 text-[10px] font-bold tracking-widest text-gray-600 border border-black/10 rounded-full backdrop-blur-md bg-white/30 shadow-sm hover:bg-white/50 transition-all block hover:text-black"
-                >
-                    <span>CONTACT</span>
-                </motion.a>
-            </Magnetic>
+
           </div>
       </div>
     </motion.nav>
